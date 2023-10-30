@@ -1,0 +1,26 @@
+syntax="proto3";
+
+package cat;
+
+option go_package = "github.com/mhmmdFsl/go-grpc-example/proto/cat";
+
+message NewCat {
+  string name = 1;
+  string breed = 2;
+  string color = 3;
+  string birthAt = 4;
+}
+
+message Cat {
+    int64 id = 1;
+    string name = 2;
+    string breed = 3;
+    string color = 4;
+    string birthAt = 5;
+    string createdAt = 6;
+    string updatedAt = 7;
+}
+
+service TodoService {
+  rpc AddCat (NewCat) returns (Cat);
+}
